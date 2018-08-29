@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Lista porductos</h1>
+       <a href="{% url 'agregar_producto' %}">Agregar producto</a>
+        {% for x in lista%}
+           <p>{{ x.nombre}} {{ x.precio }}
+            {% if x.foto %}
+            <img src="/media/{{x.foto}}" >
+            {% endif %}
+            <a href="{% url 'ver_producto' id_prod=x.id %}">Ver producto</a>
+            <a href="{% url 'editar_producto' id_prod=x.id %}">editar producto</a>
+            <a href="{% url 'eliminar_producto' id_prod=x.id %}">Eliminar producto</a>
+                
+        </p>
+       <p> {{ forloop.counter}} . {{x}}</p>
+    
+               {% endfor %}
+</body>
+</html>

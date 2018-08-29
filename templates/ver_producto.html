@@ -1,0 +1,9 @@
+<h1>ver detalle</h1>
+nombre: {{obj}}
+precio: {{obj.precio}}
+categorias: {{obj.categoria}}
+{% for c in obj.categoria.all %}
+{{c}}
+
+{% endfor %}}
+<a href="{% url 'listaProductos'%}"></a>

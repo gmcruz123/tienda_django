@@ -1,0 +1,6 @@
+<h1>Agregar producto</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+{{formulario.as_p}}
+    <input type="submit" name="agregar">
+</form>
